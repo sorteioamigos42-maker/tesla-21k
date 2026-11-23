@@ -11,7 +11,7 @@ from playwright.sync_api import sync_playwright
 
 URLS = {
     "PiscaPisca": "https://www.piscapisca.pt/carros/tesla/model-3?km-ate=100000&ano-de=2021&preco-ate=23000",
-    "Standvirtual": "https://www.standvirtual.com/carros/tesla/model-3/desde-2021?search%5Bfilter_float_mileage%3Ato%5D=100000&search%5Bfilter_float_price%3Ato%5D=23000",
+    "Standvirtual": "https://www.standvirtual.com/carros/tesla/model-3/desde-2021?search%5Bfilter_float_mileage%3Ato%5D=126000&search%5Bfilter_float_price%3Ato%5D=25000",
 }
 
 FICHEIRO_VISTOS = "vistos.json"
