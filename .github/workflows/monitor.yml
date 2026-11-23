@@ -1,0 +1,42 @@
+name: Monitor de Carros
+
+on:
+  schedule:
+    # Corre de 10 em 10 minutos (repositório público = gratuito e ilimitado)
+    # Se usares repositório PRIVADO, muda para '*/30 * * * *' para ficar dentro dos 2.000 min/mês grátis
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar Playwright e Chromium
+        run: |
+          pip install playwright
+          playwright install chromium
+
+      - name: Procurar novos anúncios
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          EMAIL_DESTINO: ${{ secrets.EMAIL_DESTINO }}
+        run: python monitor.py
+
+      - name: Guardar anúncios já vistos
+        run: |
+          git config user.name "Monitor Carros"
+          git config user.email "actions@github.com"
+          git add vistos.json || true
+          git diff --staged --quiet || (git commit -m "Atualizar anuncios vistos" && git push)
