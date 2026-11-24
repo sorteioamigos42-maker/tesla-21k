@@ -14,5 +14,21 @@
     "preco": "17 000 €",
     "km": "63 495 km",
     "ano": "2022"
+  },
+  "SV_8Q1o4i": {
+    "site": "Standvirtual",
+    "titulo": "Tesla Model 3 Standard Range Plus RWD",
+    "link": "https://www.standvirtual.com/carros/anuncio/tesla-model-3-ver-standard-range-plus-rwd-ID8Q1o4i.html",
+    "preco": "24 500 €",
+    "km": "40 000 km",
+    "ano": "2021"
+  },
+  "PP_BxXRy": {
+    "site": "PiscaPisca",
+    "titulo": "Tesla Model 3 (PiscaPisca)",
+    "link": "https://www.piscapisca.pt/carros/usados/tesla-model-3-performance-eletrico/BxXRy",
+    "preco": "17 000 €",
+    "km": "33 273 km",
+    "ano": "2022"
   }
 }
